@@ -1,4 +1,4 @@
-
+import {Input} from "@nextui-org/react";
 
 function App() {
   return (
@@ -7,7 +7,11 @@ function App() {
       <h1>DVZ BUSCADOR POR RAZA</h1>
       <form action="">
         
-        <input type="text" placeholder="Ingresa la raza" />
+      <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+        <Input type="email" label="Email" />
+        <Input type="email" label="Email" placeholder="Enter your email" />
+      </div>
+  
       </form>
       </header>
       <main>
