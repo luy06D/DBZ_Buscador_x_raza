@@ -2,16 +2,16 @@
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <header>
       <h1>DVZ BUSCADOR POR RAZA</h1>
       <form action="">
         
-        <input type="text" />
+        <input type="text" placeholder="Ingresa la raza" />
       </form>
       </header>
       <main>
-      
+      <p>AQUI TODO EL CONTENIDO </p>
       </main>
     </div>
   
