@@ -1,16 +1,14 @@
-import {Input} from "@nextui-org/react";
+import {Input, Button} from "@nextui-org/react"
+import './App.css'
 
 function App() {
   return (
-    <div className="container">
+    <div className="cabezera">
       <header>
       <h1>DVZ BUSCADOR POR RAZA</h1>
       <form action="">
-        
-      <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
-        <Input type="email" label="Email" />
-        <Input type="email" label="Email" placeholder="Enter your email" />
-      </div>
+        <Input type="text" placeholder="Saiyan , Human, Namekian" />
+        <Button color="primary" variant="shadow">Buscar</Button>
   
       </form>
       </header>
