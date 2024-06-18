@@ -1,12 +1,13 @@
+import { useEffect, useState } from "react"
 import {Input, Button} from "@nextui-org/react"
 import './App.css'
-import responseDBZ from './api-json/json-true'
-import { useState } from "react"
+import {Personajes} from './components/cards_dvz'
 
 
 
 function App() {
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState('')
+  const [response , setResponse] = useState(null)
 
 
   const handleSubmit = (event) =>{
@@ -19,6 +20,7 @@ function App() {
 
   }
 
+  
   return (
     <div className="cabezera">
       <header>
@@ -29,13 +31,7 @@ function App() {
       </form>
       </header>
       <main >
-        <ul className="cards">{responseDBZ.map(response => (
-          <li key={response.id}>
-            <h3>{response.name}</h3>
-            <p>{response.ki}</p>
-            <img src={response.image} alt="" />
-          </li>
-        ))}</ul>
+        <Personajes responsedbz={response}/>
       </main>
     </div>
   
