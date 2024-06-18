@@ -19,7 +19,6 @@ function NoResponse(){
 }
 
 export function Personajes ({responsedbz}){
-    console.log(responsedbz)
     // const hasResponse = responsedbz.length > 0    
     return(
         responsedbz  ? <ListDvz responsedbz={responsedbz} /> 
