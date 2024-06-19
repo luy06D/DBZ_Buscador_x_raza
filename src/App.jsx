@@ -1,18 +1,26 @@
-import { useEffect, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import {Input, Button} from "@nextui-org/react"
 import './App.css'
 import {Personajes} from './components/cards_dvz'
 import { getPersonajes } from "./service/personajes"
+import debounce from "just-debounce-it"
 
 
 
 function App() {
   const [search, setSearch] = useState('')
   const [response , setResponse] = useState(null)
-  console.log(response)
+  
+
+  const debounceFetchPersonajes = useCallback(
+    debounce( search =>{
+      fetchPersonajes({search})
+    }, 700), []
+  )
+
 
   //Toma la data retornada de getPersonajes y actualiza el estado response
-  const fetchPersonajes = async () =>{
+  const fetchPersonajes = async ({search}) =>{
     const data = await getPersonajes({search})
     setResponse(data)
   }
@@ -20,13 +28,12 @@ function App() {
   const handleSubmit = (event) =>{
     event.preventDefault()
     fetchPersonajes();
-
   }
-
-
+  
   const handleChange = (event) => {
     const newSearch = event.target.value
     setSearch(newSearch)
+    debounceFetchPersonajes(newSearch);
 
   }
 
