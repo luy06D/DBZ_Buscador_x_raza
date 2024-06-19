@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+body{
+    font-family: "Permanent Marker", cursive;
+    /* background-color: #F3630C; */
+
+}
 .cabezera{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    max-width: 800px;
   }
+
+.form-search{
+    display: flex;
+    align-items: center;
+  }
+ 
 
 
 .title{
     font-size: 1.5rem;
+
 }
 
 main{
