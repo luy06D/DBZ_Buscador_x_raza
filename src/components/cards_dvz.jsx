@@ -1,6 +1,19 @@
 import {Card, CardHeader, CardFooter, Image, Button} from "@nextui-org/react";
+import { useState } from "react";
+import { ModalDvz } from './modal_dvz';
 
 function ListDvz ({responsedbz}) {
+  const [openModal , setOpenModal] = useState(false)
+
+  const abrirModal = () =>{
+    setOpenModal(true)
+    
+  }
+
+  const cerrarModal = () =>{
+    setOpenModal(false)
+  }
+
     return(
         <div className="tarjeta gap-2 grid grid-cols-2 sm:grid-cols-4">
             {responsedbz.map( response => (
@@ -26,7 +39,8 @@ function ListDvz ({responsedbz}) {
                       <p className="text-tiny text-white/80">Ki: {response.ki}</p>
                       <p className="text-tiny text-white/80">Raza: {response.race}</p>
                     </div>
-                  <Button radius="full" size="sm" key={response.id}>Ver mas</Button>
+                  <Button onClick={abrirModal} radius="full" size="sm" key={response.id}>Ver mas</Button>
+                  <ModalDvz openModal={openModal} />
                   </div>
                 </CardFooter>
               </Card>
