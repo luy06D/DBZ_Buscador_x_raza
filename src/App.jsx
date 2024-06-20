@@ -40,6 +40,7 @@ function App() {
 
   
   return (
+    <body>      
     <div className="cabezera">
       <header className="mt-4 mb-7">
       <h1 className="mt-4 title">Buscador DBZ</h1>
@@ -53,6 +54,7 @@ function App() {
         <Personajes responsedbz={response}/>
       </main>
     </div>
+    </body>
   
   )
 }

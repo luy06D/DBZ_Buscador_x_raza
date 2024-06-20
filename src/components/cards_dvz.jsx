@@ -6,7 +6,7 @@ function ListDvz ({responsedbz}) {
             {responsedbz.map( response => (
               <Card isFooterBlurred className="w-full h-[300px]" key={response.id}>
                 <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                  <p className="text-tiny text-black uppercase font-bold">{response.name}</p>
+                  <p className="card-name text-warning">{response.name}</p>
                 
                 </CardHeader>
                 <Image
@@ -15,7 +15,7 @@ function ListDvz ({responsedbz}) {
                   className="z-0 w-full h-full"
                   src={response.image}
                 />
-                <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                   <div className="flex flex-grow gap-2 items-center">
                     {/* <Image
                       alt="Breathing app icon"
@@ -23,8 +23,8 @@ function ListDvz ({responsedbz}) {
                       src="https://nextui.org/images/breathing-app-icon.jpeg"
                     /> */}
                     <div className="flex flex-col">
-                      <p className="text-tiny text-white/60">Ki: {response.ki}</p>
-                      <p className="text-tiny text-white/60">Raza: {response.race}</p>
+                      <p className="text-tiny text-white/80">Ki: {response.ki}</p>
+                      <p className="text-tiny text-white/80">Raza: {response.race}</p>
                     </div>
                   <Button radius="full" size="sm" key={response.id}>Ver mas</Button>
                   </div>
