@@ -41,7 +41,7 @@ function App() {
   
   return (
     <div className="cabezera">
-      <header>
+      <header className="mt-4 mb-7">
       <h1 className="mt-4 title">Buscador DBZ</h1>
       <form className="form-search" onSubmit={handleSubmit}>
         <Input onChange={handleChange} value={search} className="mt-3 mb-3" type="text" placeholder="Goku, Vegeta , Krillin..." />

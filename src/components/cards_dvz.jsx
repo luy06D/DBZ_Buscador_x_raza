@@ -1,24 +1,35 @@
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardFooter, Image, Button} from "@nextui-org/react";
 
 function ListDvz ({responsedbz}) {
     return(
         <div className="tarjeta gap-2 grid grid-cols-2 sm:grid-cols-4">
             {responsedbz.map( response => (
-              <Card className="py-4" key={response.id}>
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <h4 className="font-bold text-large">{response.name}</h4>
-                <small className="text-default-500">Ki: {response.ki}</small>
-                <p className="text-tiny uppercase font-bold"></p>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
+              <Card isFooterBlurred className="w-full h-[300px]" key={response.id}>
+                <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                  <p className="text-tiny text-black uppercase font-bold">{response.name}</p>
+                
+                </CardHeader>
                 <Image
+                  removeWrapper
                   alt={response.name}
-                  className="object-cover rounded-xl"
+                  className="z-0 w-full h-full"
                   src={response.image}
-                  width={270}
                 />
-              </CardBody>
-            </Card>
+                <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                  <div className="flex flex-grow gap-2 items-center">
+                    {/* <Image
+                      alt="Breathing app icon"
+                      className="rounded-full w-10 h-11 bg-black"
+                      src="https://nextui.org/images/breathing-app-icon.jpeg"
+                    /> */}
+                    <div className="flex flex-col">
+                      <p className="text-tiny text-white/60">Ki: {response.ki}</p>
+                      <p className="text-tiny text-white/60">Raza: {response.race}</p>
+                    </div>
+                  <Button radius="full" size="sm" key={response.id}>Ver mas</Button>
+                  </div>
+                </CardFooter>
+              </Card>
             ))}
 
         </div>

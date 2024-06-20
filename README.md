@@ -1,7 +1,11 @@
 Enunciado
 Crea una web que busque los personaje de DBZ por su raza.
 
-API a usar: `https://dragonball-api.com/api/characters?race=${textRace}`
+- Para buscar por el nombre del personaje
+API DBZ: `https://dragonball-api.com/api/characters?name=${textRace}`
 
-Requerimientos:
+- Mas detalles del personaje
+API DBZ: `https://dragonball-api.com/api/characters/${id}`
+
+
 

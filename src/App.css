@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
 body{
     font-family: "Permanent Marker", cursive;
-    background-color: #71717A;
+    /* background-color: #71717A; */
 
 }
 .cabezera{
@@ -21,7 +21,7 @@ body{
 
 .title{
     font-size: 1.5rem;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 
 }
 
