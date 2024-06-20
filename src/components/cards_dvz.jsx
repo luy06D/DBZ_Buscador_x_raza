@@ -40,7 +40,7 @@ function ListDvz ({responsedbz}) {
                       <p className="text-tiny text-white/80">Raza: {response.race}</p>
                     </div>
                   <Button onClick={abrirModal} radius="full" size="sm" key={response.id}>Ver mas</Button>
-                  <ModalDvz openModal={openModal} />
+                  <ModalDvz openModal={openModal} closeModal={cerrarModal} />
                   </div>
                 </CardFooter>
               </Card>
