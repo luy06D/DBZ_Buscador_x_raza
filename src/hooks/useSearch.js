@@ -13,7 +13,7 @@ export function useSearch (){
         }
     
         //Operadores ternarios
-        search === '' ? setError('Ingrese una raza de personaje DBZ')
+        search === '' ? setError('Ingrese el nombre de un personaje')
         : setError('')
     
     

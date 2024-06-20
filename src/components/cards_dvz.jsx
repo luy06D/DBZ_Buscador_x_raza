@@ -35,9 +35,10 @@ function NoResponse(){
 }
 
 export function Personajes ({responsedbz}){
-    // const hasResponse = responsedbz.length > 0    
+  
+    const hasResponse = responsedbz && responsedbz.length > 0    
     return(
-        responsedbz  ? <ListDvz responsedbz={responsedbz} /> 
+        hasResponse  ? <ListDvz responsedbz={responsedbz} /> 
         : <NoResponse/>
     )
 

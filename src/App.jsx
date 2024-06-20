@@ -42,9 +42,9 @@ function App() {
   return (
     <div className="cabezera">
       <header>
-      <h1 className="mt-4 title">DVZ BUSCADOR POR RAZA</h1>
+      <h1 className="mt-4 title">Buscador DBZ</h1>
       <form className="form-search" onSubmit={handleSubmit}>
-        <Input onChange={handleChange} value={search} className="mt-3 mb-3" type="text" placeholder="Saiyan , Human, Namekian" />
+        <Input onChange={handleChange} value={search} className="mt-3 mb-3" type="text" placeholder="Goku, Vegeta , Krillin..." />
         <Button type="submit" color="warning" variant="shadow">Buscar</Button>
       </form>
         {error && <p className="mb-3" style={{color: '#F5A524'}}>{error}</p>}
