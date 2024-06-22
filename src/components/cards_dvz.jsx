@@ -3,18 +3,18 @@ import { useState } from "react";
 import { ModalDvz } from './modal_dvz';
 
 function ListDvz ({responsedbz}) {
-  const [openModal , setOpenModal] = useState(false)
+  const [openModal , setOpenModal] = useState({open: false, key:null})
 
-  const abrirModal = () =>{
-    setOpenModal(true)
+  const abrirModal = (key) =>{
+    setOpenModal({open: true, key})
     
   }
 
   const cerrarModal = () =>{
-    setOpenModal(false)
+    setOpenModal({open: false, key: null})
   }
 
-    return(
+    return( 
         <div className="tarjeta gap-2 grid grid-cols-2 sm:grid-cols-4">
             {responsedbz.map( response => (
               <Card isFooterBlurred className="w-full h-[300px]" key={response.id}>
@@ -39,8 +39,8 @@ function ListDvz ({responsedbz}) {
                       <p className="text-tiny text-white/80">Ki: {response.ki}</p>
                       <p className="text-tiny text-white/80">Raza: {response.race}</p>
                     </div>
-                  <Button onClick={abrirModal} radius="full" size="sm" key={response.id}>Ver mas</Button>
-                  <ModalDvz openModal={openModal} closeModal={cerrarModal} />
+                  <Button onClick={ ()=> abrirModal(response.id)} radius="full" size="sm" key={response.id}>Ver mas</Button>
+                  <ModalDvz openModal={openModal.open} closeModal={cerrarModal} selectKey = {openModal .key} />
                   </div>
                 </CardFooter>
               </Card>
