@@ -7,7 +7,6 @@ import { useSearch } from "./hooks/useSearch"
 import debounce from "just-debounce-it"
 
 
-
 function App() {
 
   const [response , setResponse] = useState(null)

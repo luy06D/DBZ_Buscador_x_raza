@@ -29,7 +29,7 @@ main{
     margin-top: 30px;
 }
 
-.card-name{
+.card-name , .title-modal{
   font-weight: bold;
   text-shadow: 
   -1px -1px 0px black, 
