@@ -1,20 +1,41 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button} from "@nextui-org/react";
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import { getCaracteristicas } from "../service/caracteristicas";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Divider } from "@nextui-org/react";
+import debounce from "just-debounce-it";
 
 export function ModalDvz ({openModal, closeModal, selectKey}){
     const [responseCarac, setResponseCarac] = useState(null)
-    
+    const [loading, setLoading] = useState(false)
+
+    // fetch envie la key para la peticion y actualiza responceCarac
+    const fetchCaracteristicas = useCallback (async () =>{
+      setLoading(true)
+      const data = await getCaracteristicas({id: selectKey})
+      setResponseCarac(data)
+      setLoading(false)
+    }, [selectKey])
+
+    /**Debounce para demorar milisegundos cada que se haga una 
+    Nueva petición**/
+    const debounceFetchCarac = useCallback(
+      debounce(() =>{
+        fetchCaracteristicas()
+      }, 1000), [fetchCaracteristicas]
+    )
+
+    useEffect(() =>{
+      if(closeModal){
+        setResponseCarac(null)
+      }
+
+    }, [openModal])
+
+
     useEffect(() =>{
       if(openModal){
-        const fetchCaracteristicas = async () =>{
-          const data = await getCaracteristicas({id: selectKey})
-          setResponseCarac(data)
-        }
-
-        fetchCaracteristicas()
+        debounceFetchCarac()
       }
 
     }, [openModal, selectKey])
@@ -23,7 +44,11 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
     return(
       
       <Modal style={{ maxHeight: '100vh', overflowY: 'auto' }} isOpen={openModal} onClose={closeModal} size="full" >
-        {responseCarac !== null && (
+        {loading ? (
+          <ModalContent>
+            <ModalHeader>Cargando...</ModalHeader>
+          </ModalContent>
+        ) : responseCarac !== null ? (
         <ModalContent>
               <ModalHeader className="flex flex-col gap-1 text-warning title-modal">Caracteristicas de {responseCarac.name}</ModalHeader>
               <ModalBody>
@@ -59,7 +84,7 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
                 </Button>
               </ModalFooter>
         </ModalContent>
-        )}
+        ): null }
       </Modal>
     )
 
