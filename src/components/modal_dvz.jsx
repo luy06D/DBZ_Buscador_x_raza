@@ -2,7 +2,7 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button} from "
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import { getCaracteristicas } from "../service/caracteristicas";
 import { useCallback, useEffect, useState } from "react";
-import { Divider, Spinner } from "@nextui-org/react";
+import { Divider, Spinner, ScrollShadow } from "@nextui-org/react";
 import debounce from "just-debounce-it";
 
 export function ModalDvz ({openModal, closeModal, selectKey}){
@@ -50,13 +50,13 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
           </ModalContent>
         ) : responseCarac !== null ? (
         <ModalContent>
-              <ModalHeader className="flex flex-col gap-1 text-warning title-modal">Caracteristicas de {responseCarac.name}</ModalHeader>
+              <ModalHeader  className="flex flex-col gap-1 text-warning title-modal">Caracteristicas de {responseCarac.name}</ModalHeader>
               <ModalBody>
                 <p>Descripción: {responseCarac.description}</p>
                 <Divider className="my-4" />
-                <h3 className="title-modal text-warning" style={{fontSize: '1rem'}}>FASES</h3>
+                <h3 className="title-modal text-warning" style={{fontSize: '1rem'}}>TRANSFORMACIONES</h3>
                   <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
-                    {responseCarac.transformations.map(fases =>(
+                {responseCarac.transformations.map(fases =>(
                       <Card shadow="sm"  key={fases.id} className="custom-card" >
                         <CardBody className="overflow-visible p-0" >
                           <Image
@@ -71,12 +71,32 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{fases.name}</b>
-                          {/* <p className="text-default-500">{fases.ki}</p> */}
+                          <p className="text-default-600">Ki :{fases.ki}</p>
                         </CardFooter>
                       </Card>
-                    ))}
-                    
+                ))}
                   </div>
+                  <Divider className="my-4" />
+                <div className="container section-planet">
+                  <h3 className="title-modal text-warning" style={{fontSize: '1rem'}}>PLANETA DE ORIGEN</h3>
+                  <ScrollShadow hideScrollBar className="w-[300px] h-[400px]">
+                    <div className="container mt-3">
+                      <p>{responseCarac.originPlanet.description}</p>
+                    </div>
+                  </ScrollShadow>
+                  <Card shadow="sm"  className="custom-card" >
+                        <CardBody className="overflow-visible p-0" >
+                          <Image
+                            shadow="sm"
+                            radius="lg"
+                            width="100%"
+                            alt={responseCarac.name}
+                            className="fases-img"
+                            src={responseCarac.originPlanet.image}
+                          />
+                        </CardBody>
+                      </Card> 
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="warning"  onClick={closeModal}>

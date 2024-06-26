@@ -35,6 +35,7 @@ function ListDvz ({responsedbz}) {
                       className="rounded-full w-10 h-11 bg-black"
                       src="https://nextui.org/images/breathing-app-icon.jpeg"
                     /> */}
+
                     <div className="flex flex-col">
                       <p className="text-tiny text-white/80">Ki: {response.ki}</p>
                       <p className="text-tiny text-white/80">Raza: {response.race}</p>
