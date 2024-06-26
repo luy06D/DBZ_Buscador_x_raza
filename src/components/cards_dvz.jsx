@@ -17,7 +17,7 @@ function ListDvz ({responsedbz}) {
     return( 
         <div className="tarjeta gap-2 grid grid-cols-2 sm:grid-cols-4">
             {responsedbz.map( response => (
-              <Card isFooterBlurred className="w-full h-[300px]" key={response.id}>
+              <Card isFooterBlurred className="w-full h-[325px]" key={response.id}>
                 <CardHeader className="absolute z-10 top-1 flex-col items-start">
                   <p className="card-name text-warning">{response.name}</p>
                 

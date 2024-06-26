@@ -2,7 +2,7 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button} from "
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import { getCaracteristicas } from "../service/caracteristicas";
 import { useCallback, useEffect, useState } from "react";
-import { Divider } from "@nextui-org/react";
+import { Divider, Spinner } from "@nextui-org/react";
 import debounce from "just-debounce-it";
 
 export function ModalDvz ({openModal, closeModal, selectKey}){
@@ -46,7 +46,7 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
       <Modal style={{ maxHeight: '100vh', overflowY: 'auto' }} isOpen={openModal} onClose={closeModal} size="full" >
         {loading ? (
           <ModalContent>
-            <ModalHeader>Cargando...</ModalHeader>
+            <Spinner label="Cargando..." color="warning" className="mt-7"/>
           </ModalContent>
         ) : responseCarac !== null ? (
         <ModalContent>
