@@ -30,12 +30,12 @@ function ListDvz ({responsedbz}) {
                 />
                 <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                   <div className="flex flex-grow gap-2 items-center">
-                    {/* <Image
+                    <Image
                       alt="Breathing app icon"
                       className="rounded-full w-10 h-11 bg-black"
-                      src="https://nextui.org/images/breathing-app-icon.jpeg"
-                    /> */}
-
+                      src="i-game-icons-dragon-ballsnom"
+                    />
+                    
                     <div className="flex flex-col">
                       <p className="text-tiny text-white/80">Ki: {response.ki}</p>
                       <p className="text-tiny text-white/80">Raza: {response.race}</p>

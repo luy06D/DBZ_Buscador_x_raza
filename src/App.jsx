@@ -5,6 +5,7 @@ import {Personajes} from './components/cards_dvz'
 import { getPersonajes } from "./service/personajes"
 import { useSearch } from "./hooks/useSearch"
 import debounce from "just-debounce-it"
+import '@fontsource/luckiest-guy';
 
 
 function App() {

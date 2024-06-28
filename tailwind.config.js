@@ -1,5 +1,7 @@
 // tailwind.config.js
 const {nextui} = require("@nextui-org/react");
+const { iconsPlugin, dynamicIconsPlugin } = require('@egoist/tailwindcss-icons')
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,5 +14,5 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(), iconsPlugin(), dynamicIconsPlugin()],
 };

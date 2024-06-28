@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+
 body{
-  font-family: "Playwrite DE Grund", cursive;
-    /* font-family: "Permanent Marker", cursive; */
+
+    font-family: 'Luckiest Guy', system-ui;
     /* background-color: #71717A; */
 
 }
@@ -55,5 +54,14 @@ main{
 .fases-img, .custom-card{
   width: 300px;
   height: 300px;
+}
+
+.section-origin{
+  display: flex;
+  padding: 10px;
+}
+
+.text-origin{
+margin-right: 300px;
 }
 

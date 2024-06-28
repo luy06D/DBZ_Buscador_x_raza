@@ -79,23 +79,25 @@ export function ModalDvz ({openModal, closeModal, selectKey}){
                   <Divider className="my-4" />
                 <div className="container section-planet">
                   <h3 className="title-modal text-warning" style={{fontSize: '1rem'}}>PLANETA DE ORIGEN</h3>
-                  <ScrollShadow hideScrollBar className="w-[300px] h-[400px]">
-                    <div className="container mt-3">
-                      <p>{responseCarac.originPlanet.description}</p>
-                    </div>
-                  </ScrollShadow>
-                  <Card shadow="sm"  className="custom-card" >
-                        <CardBody className="overflow-visible p-0" >
-                          <Image
-                            shadow="sm"
-                            radius="lg"
-                            width="100%"
-                            alt={responseCarac.name}
-                            className="fases-img"
-                            src={responseCarac.originPlanet.image}
-                          />
-                        </CardBody>
-                      </Card> 
+                  <div className="section-origin">
+                    <ScrollShadow hideScrollBar className="w-[300px] h-[400px] text-origin">
+                      <div className="container mt-3">
+                        <p>{responseCarac.originPlanet.description}</p>
+                      </div>
+                    </ScrollShadow>
+                    <Card shadow="sm"  className="custom-card" >
+                          <CardBody className="overflow-visible p-0" >
+                            <Image
+                              shadow="sm"
+                              radius="lg"
+                              width="100%"
+                              alt={responseCarac.name}
+                              className="fases-img"
+                              src={responseCarac.originPlanet.image}
+                            />
+                          </CardBody>
+                    </Card> 
+                  </div>
                 </div>
               </ModalBody>
               <ModalFooter>
