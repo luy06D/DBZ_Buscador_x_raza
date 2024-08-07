@@ -10,4 +10,5 @@ API DBZ: `https://dragonball-api.com/api/characters?name=${textRace}`
 API DBZ: `https://dragonball-api.com/api/characters/${id}`
 
 
+![BUSCADOR](https://github.com/user-attachments/assets/89a73266-14aa-4eac-b17b-ef86607db258)
 
